@@ -30,6 +30,7 @@ export class App extends Component {
   }
 
   formSubmitHandler = (values) => {
+    console.log('App', values);
     const { contacts } = this.state
     const newName = contacts.some(contact =>
       contact.name.toLowerCase() === values.name.toLowerCase());
