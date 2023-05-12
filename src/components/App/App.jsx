@@ -21,8 +21,11 @@ export class App extends Component {
   }
 
   componentDidUpdate(_, prevState) {
-      if (this.state.contacts !== prevState.contacts) {
-      localStorage.setItem('contact', JSON.stringify(this.state.contacts));
+    const nextContacts = this.state.contacts;
+    const prevContacts = prevState.contacts;
+
+    if (nextContacts !== prevContacts) {
+      localStorage.setItem('contact', JSON.stringify(nextContacts));
     };
   }
 
@@ -57,7 +60,7 @@ export class App extends Component {
     const normalizeFilter = filter.toLowerCase();
 
     return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizeFilter));
+      contact.name.toLowerCase().includes(normalizeFilter)).sort((a, b) => a.name.localeCompare(b.name));
   }
 
   render() {
