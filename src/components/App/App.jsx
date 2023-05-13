@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Container, Titile, SubTitile } from './APP.styled';
+import { Container, Titile, SubTitile } from './App.styled';
 import { ContactForm } from '../ContactForm';
 import { Filter } from '../Filter';
 import { ContactList } from '../ContactList';
@@ -30,8 +30,8 @@ export class App extends Component {
   }
 
   formSubmitHandler = (values) => {
-    console.log('App', values);
-    const { contacts } = this.state
+    // console.log('App', values);
+    const { contacts } = this.state;
     const newName = contacts.some(contact =>
       contact.name.toLowerCase() === values.name.toLowerCase());
 
