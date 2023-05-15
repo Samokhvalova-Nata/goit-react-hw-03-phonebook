@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Container, Titile, SubTitile } from './App.styled';
+import { Container, Titile, SubTitile } from './Big.styled';
 import { ContactForm } from '../ContactForm';
 import { Filter } from '../Filter';
 import { ContactList } from '../ContactList';
